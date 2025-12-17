@@ -38,7 +38,7 @@ defmodule Kafkaesque.IntegrationTest do
     use Kafkaesque, repo: Repo
 
     def encode(body) do
-      Jason.encode!(body)
+      JSON.encode!(body)
     end
   end
 
@@ -57,7 +57,7 @@ defmodule Kafkaesque.IntegrationTest do
     assert {:ok, message} = MyApp.Kafka.publish("integration_test_topic", %{hello: :kafka})
     assert message.topic == "integration_test_topic"
     assert message.partition == 0
-    assert message.body == Jason.encode!(%{hello: :kafka})
+    assert message.body == JSON.encode!(%{hello: :kafka})
     assert message.state == :pending
 
     # Await message acknowledgement

@@ -28,13 +28,12 @@ defmodule Kafkaesque.MixProject do
 
   defp deps do
     [
-      {:gen_stage, "~> 1.0"},
-      {:brod, "~> 3.15"},
-      {:ecto, "~> 3.5"},
-      {:ecto_sql, ">= 3.4.3"},
-      {:jason, "~> 1.1"},
+      {:gen_stage, "~> 1.3"},
+      {:brod, "~> 4.4"},
+      {:ecto, "~> 3.13"},
+      {:ecto_sql, "~> 3.13"},
       {:postgrex, "~> 0.14"},
-      {:telemetry, "~> 0.4 or ~> 1.0"},
+      {:telemetry, "~> 1.3"},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
       {:dialyxir, ">= 0.0.0", only: :dev, runtime: false}
     ]
